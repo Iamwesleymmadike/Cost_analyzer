@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #141A2D;
+}
+
+.header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px;
+  color: #DBE0EF;
+  background-color: #090D17;
+}
+
+.header>img{
+  height: 35px;
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #DBE0EF;
+}
+
+.dashboard {
+  max-width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 40px;
+  overflow-y: auto;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  row-gap: 15px;
+  column-gap: 40px;
+  width: 100%;
+  height: 100%;
+  background-color: #090D17;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.summary-card {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.summaryContainer{
+  background-image: url("https://s3-alpha-sig.figma.com/img/9c5c/c915/82769a7f3a1765eed569c6ebedeff69d?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k0fSrzq4YGDI8J98VI5GkmJ6SJ7SGGwzzZ-aCD2G6p1TSwbllPA1NJujvKMiP32ly2JydkemjLFutFzTe9-GEPPyt-T2vN0Ww2~avfItARA17ODEk3qAV9gSKXylHBtRl6oGjeoVNVUcM1EOqly2bz9uE2QWdZmVXQC92fo3ZmphASRotYfRszK5Qt64QseUfImQjFgMOvavFc3K203UGXbS5s2ZsHKHTGuoQY6FlGRW2CJeP85yHZdNyMak3c~o2XHg6Y645UfwCad2U~b0F32LRTAoiLZlVVjijQEIRFzBDIU~HleZmPR86DjL2aHkwDeXR70W~1mgPVHhcAjf0w__");
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  border: 1px solid #414B59;
+  padding: 30px;
+  color: #DBE0EF;
+}
+
+.summaryCost{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  height: 100%;
+  padding: 30px;
+  width: fit-content;
+  border-radius: 20px;
+  background: #090d17c5; /* Adjust the color and opacity as needed */
+  backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+}
+
+.logo{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}
+.logoImg{
+  grid-row: 1 / 1;
+}
+
+.logoImg>img{
+  height: 70px;
+}
+
+.logoHeader{
+  grid-row: 1;
+  padding-top: 10px;
+}
+
+.costs{
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: 10px;
+}
+
+.currentCost{
+  grid-column: 1;
+  border-right: 2px solid #DBE0EF;
+  padding-right: 10px;
+}
+.currentCost>h5,h6{
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 15px;
+  display: inline;
+}
+.currentCost>h1{
+  font-weight: bold;
+  font-size: 55px;
+  transition-duration: 1s;
+}
+.budgetCost{
+  grid-column: 2;
+}
+
+.budgetCost>h5,h6{
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 15px;
+}
+.budgetCost>h3{
+  font-weight: lighter;
+  font-size: 35px;
+}
+.search-filters {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.searchFiltersContainer{
+  display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 410px auto 1fr;
+    gap: 10px;
+}
+#searchBox {
+  background-color: #141A2D;
+  color: #DBE0EF;
+  padding: 10px 14px;
+  border-radius: 8px;
+  width: 400px;
+  height: 40px;
+  border: 2px solid #414B59;
+  transition:all 0.5s ease-in-out
+}
+
+
+
+.checkBoxContainer {
+  color: #DBE0EF;
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 180px
+}
+/* Hide the default checkbox */
+.checkBoxContainer input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom checkbox */
+.checkBoxContainer label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #DBE0EF;
+}
+/* Create the custom checkbox square */
+.checkBoxContainer input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #090D17;
+  border: 2px solid #414B59;
+  border-radius: 8px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+/* Create the checkmark inside the checkbox */
+.checkBoxContainer input[type="checkbox"]:checked + label:before {
+  background-color: #DBE0EF;
+  border: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23090D17' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.filters>button {
+  background-color: #141A2D;
+  color: #A0A0A0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  border-radius: 9px;
+  border: 1px solid #414B59;
+  cursor: pointer;
+  height: 40px;
+  width: auto;
+  transition-duration: 0.5s;
+  padding: 10px;
+}
+
+.search-filters button:hover {
+  background-color: #2D3B56;
+  transition-duration: 0.5s;
+}
+
+.filters>button>.icon{
+  margin-right: 5px;
+}
+
+
+.data-table {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  overflow-y: auto;
+  background-color: #2D3B56;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.top-10-costs {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background-color: #090D17;
+  border-radius: 20px;
+  border: 1px solid #414B59;
+  padding: 10px 35px;
+  color: #DBE0EF;
+}
+
+.top-10-costs h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.top-10-costs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.top-10-costs li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #414B59;
+}
+
+.top-10-costs li:last-child {
+  border-bottom: none;
+}
+
+.cumulatives {
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #141A2D;
+}
+
+.cumulatives > table {
+  width: 100%;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #090D17; /* Dark background color */
+  color: #ffffff; /* White text color */
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  padding: 0px;
+
+
+}
+
+.data-table th, .data-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #141A2D; /* Slightly lighter shade for headers */
+  text-transform: uppercase;
+}
+
+.data-table tr {
+  background-color: #161923; /* Alternating row color */
+  transition: all 0.5s ease;
+}
+tbody>tr{
+  border-radius: 8px;
+}
+
+.data-table tr:hover {
+  background-color: #2d3748; /* Hover effect */
+  transition: all 0.5s ease;
+}
+
+.starred td {
+  color: gold; /* Color for starred rows */
+}
