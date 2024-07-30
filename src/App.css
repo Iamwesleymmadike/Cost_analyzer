@@ -268,7 +268,9 @@ body {
 .top-10-costs li:last-child {
   border-bottom: none;
 }
-
+.top10CostsTable{
+  margin-top: 90px;
+}
 .cumulatives {
   margin-top: 20px;
   border-radius: 10px;

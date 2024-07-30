@@ -5,7 +5,7 @@ var customStyle = {
     color:"",
 }
 var currentCost = "31,654.85";
-var budgetCost = "20,001";
+var budgetCost = "40,001";
 if(currentCost>budgetCost){
     customStyle.color="red"
 }else{
